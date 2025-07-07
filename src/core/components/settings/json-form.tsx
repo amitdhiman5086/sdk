@@ -11,6 +11,7 @@ import {
 } from "@/core/rjsf-widgets";
 import { CodeEditor } from "@/core/rjsf-widgets/code-widget";
 import { CollectionFilterSortField } from "@/core/rjsf-widgets/collection-select";
+import { CreatableSelectWidget } from "@/core/rjsf-widgets/creatable-select";
 import JSONFormFieldTemplate from "@/core/rjsf-widgets/json-form-field-template";
 import { RepeaterBindingWidget } from "@/core/rjsf-widgets/repeater-binding";
 import { useThrottledCallback } from "@react-hookz/web";
@@ -62,6 +63,7 @@ export const JSONForm = memo(({ blockId, schema, uiSchema, formData, onChange }:
         colCount: RowColField,
         collectionSelect: CollectionFilterSortField,
         repeaterBinding: RepeaterBindingWidget,
+        creatableSelect: CreatableSelectWidget,
         ...widgets,
       }}
       fields={{

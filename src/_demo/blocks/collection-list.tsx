@@ -72,6 +72,18 @@ const Config = {
       wrapperStyles: StylesProp("bg-green-100 p-2 border border-red-500"),
       listStyles: StylesProp("text-blue-300 bg-blue-100"),
       itemStyles: StylesProp("text-green-500 bg-red-400"),
+      selectNew: {
+        type: "string",
+        title: "Select Option",
+        default: "New Name",
+        enum: ["chocolate", "strawberry", "vanilla"],
+        ui: {
+          "ui:widget": "creatableSelect",
+          "ui:enumNames": ["Chocolate", "Strawberry", "Vanilla"],
+          "ui:placeholder": "Select or create an option...",
+          "ui:styles": StylesProp("line-clamp-1 border border-red-500 w-full p-1")
+        },
+      }
     },
   }),
   i18nProps: ["sort", "title"],
