@@ -32,6 +32,7 @@ function ChaiBuilderDefault() {
         importTheme: false,
         dragAndDrop: true,
         designTokens: true,
+        validateStructure: true,
       }}
       gotoPage={(args) => {
         console.log("gotoPage", args);

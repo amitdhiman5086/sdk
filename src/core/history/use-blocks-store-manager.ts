@@ -8,6 +8,8 @@ import { ChaiBlock } from "@/types/chai-block";
 import { each, find, omit } from "lodash-es";
 import { useIncrementActionsCount } from "../components/use-auto-save";
 import { useCheckStructure } from "../hooks/use-check-structure";
+import { presentBlocksAtom } from "../atoms/blocks";
+import { builderStore } from "../atoms/store";
 
 export const useBlocksStoreManager = () => {
   const [, setBlocks] = useBlocksStore();
@@ -63,6 +65,8 @@ export const useBlocksStoreManager = () => {
       });
       postMessage({ type: "blocks-props-updated", blocks });
       incrementActionsCount();
+      const currentBlocks = builderStore.get(presentBlocksAtom) as ChaiBlock[];
+      runValidation(currentBlocks);
     },
   };
 };
